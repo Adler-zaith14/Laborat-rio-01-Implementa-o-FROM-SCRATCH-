@@ -1,8 +1,11 @@
 # Laborat-rio-01-Implementa-o-FROM-SCRATCH-
 Missão: Criar uma classe python que execute a equação matricial de atenção
+
+
 RESPOTA FEITA NO COLAB- REPOSITORIO DA ATIVIDADE:https://colab.research.google.com/drive/1rWZSSKKTzgqIezLbTxgXQmNmlKnI87jG?usp=sharing
 
-fontes: 
+
+FONTES: 
 
 https://www.tensorflow.org/text/tutorials/transformer?hl=pt-br - Entendimento de alguns conceitos pra gerar o heatmap
 https://github.com/handsOnLLM/Hands-On-Large-Language-Models?tab=readme-ov-file - Entendimento de alguns conceitos do Lenguager models
