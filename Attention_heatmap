@@ -1,0 +1,31 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from attention import ScaledDotProductAttention, generate_random_qkv
+
+
+def plot_attention_heatmap(attention_weights, title="Attention Weights"):
+    seq_len = attention_weights.shape[0]
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(
+        attention_weights,
+        annot=True,
+        fmt=".3f",
+        cmap="YlGnBu",
+        xticklabels=[f"Key_{i}" for i in range(seq_len)],
+        yticklabels=[f"Query_{i}" for i in range(seq_len)],
+        linewidths=0.5,
+        linecolor='gray'
+    )
+    plt.title(title, fontsize=14, fontweight='bold')
+    plt.xlabel("Keys")
+    plt.ylabel("Queries")
+    plt.tight_layout()
+    plt.show()
+
+
+if __name__ == "__main__":
+    Q, K, V = generate_random_qkv(seq_len=6, d_k=16, seed=42)
+    attention = ScaledDotProductAttention()
+    _, weights = attention(Q, K, V)
+    plot_attention_heatmap(weights, title="Scaled Dot-Product Attention Heatmap")
